@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css') }}">
+    <title>Расчёт разового максимума в жиме лёжа</title>
+</head>
+<body>
+    <div class="page">
+        <div class="content">
+            <h1>Калькулятор жима лёжа на раз</h1>
+            <p>Рассчитайте свой максимальный вес жима штанги на раз</p>
+
+
+            <div class="form-box">
+                <form class="my-form" method="post" action="/">
+                    <label class="information">Вес штанги:<br></label><input type="number" step="any" id="weight" name="working-weight"><br>
+                    <Label class="information">Кол-во повторений:<br></Label><input type="number" step="any" id="repetition" name="working-repetition"><br><br>
+                    <button class="button-calculator" type="sumbit">Рассчитать</button>
+                    <hr>
+                    <table>
+                        <tr>
+                            <td>Вес штанги</td>
+                            <td class="variable">{{weight}}</td>
+                        </tr>
+                        <tr>
+                            <td>Кол-во повторений</td>
+                            <td class="variable">{{repetition}}</td>
+                        </tr>
+                        <tr>
+                            <td><hr></td>
+                            <td><hr></td>
+                        </tr>
+                        <tr>
+                            <td>Формула Эпли</td>
+                            <td class="variable">{{result['epley']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Формула Бжицки</td>
+                            <td class="variable">{{result['mattBrzucki']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Формула Лэндера</td>
+                            <td class="variable">{{result['lander']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Формула О'Коннор</td>
+                            <td class="variable">{{result['oConner']}}</td>
+                        </tr>
+                        <tr>
+                            <td><hr></td>
+                            <td><hr></td>
+                        </tr>
+                        <tr>
+                            <td>Максимум в жиме лёжа:</td>
+                            <td class="variable">{{result['finalBecnhPress']}}</td>
+                        </tr>
+                    </table>
+                </form>
+
+            </div>
+
+            <p></p>
+        </div>
+    </div>
+</body>
+</html>
